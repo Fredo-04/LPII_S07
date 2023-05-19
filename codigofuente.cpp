@@ -15,7 +15,7 @@ public:
     virtual ~MaterialBibliografico() {}
 
     virtual void mostrarInformacion() const {
-        cout << "Título: " << titulo << endl;
+        cout << "Titulo: " << titulo << endl;
         cout << "Autor: " << autor << endl;
         cout << "Editorial: " << editorial << endl;
         cout << "Fecha de publicación: " << fechaPublicacion << endl;
@@ -32,7 +32,7 @@ public:
 
     void mostrarInformacion() const {
         MaterialBibliografico::mostrarInformacion();
-        cout << "Número de páginas: " << numeroPaginas << endl;
+        cout << "Numero de paginas: " << numeroPaginas << endl;
     }
 };
 
@@ -46,21 +46,21 @@ public:
 
     void mostrarInformacion() const {
         MaterialBibliografico::mostrarInformacion();
-        cout << "Número de edición: " << numeroEdicion << endl;
+        cout << "Numero de edicion: " << numeroEdicion << endl;
     }
 };
 
 class Tesis : public MaterialBibliografico {
 private:
-    string autorTesis;
+    string formato;
 
 public:
-    Tesis(const string& _titulo, const string& _autor, const string& _editorial, int _fechaPublicacion, const string& _autorTesis)
-        : MaterialBibliografico(_titulo, _autor, _editorial, _fechaPublicacion), autorTesis(_autorTesis) {}
+    Tesis(const string& _titulo, const string& _autor, const string& _editorial, int _fechaPublicacion, const string& _formato)
+        : MaterialBibliografico(_titulo, _autor, _editorial, _fechaPublicacion), formato(_formato) {}
 
     void mostrarInformacion() const {
         MaterialBibliografico::mostrarInformacion();
-        cout << "Autor de la tesis: " << autorTesis << endl;
+        cout << "Tesis en formato: " << formato << endl;
     }
 };
 
@@ -83,8 +83,9 @@ int main() {
 
     Revista revista("National Geographic", "Varios", "National Geographic Society", 2023, 150);
     revista.mostrarInformacion(); 
+    cout << endl;
 
-    Tesis tesis("Tesis de Doctorado", "John Smith", "Universidad XYZ", 2022, "Dr. Juan Pérez");
+    Tesis tesis("Tesis de Doctorado", "John Smith", "Universidad XYZ", 2022, "IEEE");
     tesis.mostrarInformacion();
     cout << endl;
 
