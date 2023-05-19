@@ -18,7 +18,7 @@ public:
         cout << "Titulo: " << titulo << endl;
         cout << "Autor: " << autor << endl;
         cout << "Editorial: " << editorial << endl;
-        cout << "Fecha de publicación: " << fechaPublicacion << endl;
+        cout << "Fecha de publicacion: " << fechaPublicacion << endl;
     }
 };
 
@@ -66,14 +66,14 @@ public:
 
 class Articulo : public MaterialBibliografico {
 private:
-    string autorArticulo;
+    string Tema;
 public:
-    Articulo(const string& _titulo, const string& _autor, const string& _editorial, int _fechaPublicacion, const string& _autorArticulo)
-        : MaterialBibliografico(_titulo, _autor, _editorial, _fechaPublicacion), autorArticulo(_autorArticulo) {}
+    Articulo(const string& _titulo, const string& _autor, const string& _editorial, int _fechaPublicacion, const string& _Tema)
+        : MaterialBibliografico(_titulo, _autor, _editorial, _fechaPublicacion), Tema(_Tema) {}
 
     void mostrarInformacion() const {
         MaterialBibliografico::mostrarInformacion();
-        cout << "Autor del artículo: " << autorArticulo<<endl;
+        cout << "El articulo se basa en el tema : " << Tema<<endl;
     }
 };
 int main() {
@@ -89,7 +89,7 @@ int main() {
     tesis.mostrarInformacion();
     cout << endl;
 
-    Articulo articulo("Artículo Científico", "Jane Doe", "Journal of Science", 2023, "Dra. María López");
+    Articulo articulo("Articulo Cientifico", "Jane Doe", "Journal of Science", 2023, "Desarrollo de las partes de un articulo cientifico");
     articulo.mostrarInformacion();
 
     return 0;
